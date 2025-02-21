@@ -1,9 +1,16 @@
+body {
+	background-color: black;
+}
+h3 {
+	color: blue;
+}
+
 .grid {
 	width: 200px;
 	height: 400px;
 	display: flex;
 	flex-wrap: wrap;
-	background-color: black;
+	background-color: teal;
 }
 
 .grid div {
