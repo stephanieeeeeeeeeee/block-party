@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
+	// TODO: we can also get the grid size from user
 	const GRID_WIDTH = 10;
 	const GRID_HEIGHT = 20;
 	const GRID_SIZE = GRID_WIDTH * GRID_HEIGHT;
 
+	// no need to type 200 divs :)
 	const grid = createGrid();
 	let squares = Array.from(grid.querySelectorAll("div"));
 	const startBtn = document.querySelector(".button");
@@ -18,8 +20,13 @@ document.addEventListener("DOMContentLoaded", () => {
 	let lines = 0;
 	let timerId;
 	let nextRandom = 0;
-
-	const colors = ["blue", "pink", "purple", "peach", "yellow"];
+	const colors = [
+		"url(images/blue_block.png)",
+		"url(images/pink_block.png)",
+		"url(images/purple_block.png)",
+		"url(images/peach_block.png)",
+		"url(images/yellow_block.png)",
+	];
 
 	function createGrid() {
 		// the main grid
@@ -37,7 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 
 		let previousGrid = document.querySelector(".previous-grid");
-		// sixteen is the max grid size with all tetrominoes
+		// Since 16 is the max grid size in which all the Tetrominoes
+		// can fit in we create one here
 		for (let i = 0; i < 16; i++) {
 			let gridElement = document.createElement("div");
 			previousGrid.appendChild(gridElement);
@@ -53,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		else if (e.keyCode === 40) moveDown();
 	}
 
-	// the classical behavior is to speed up the block if down arrow is pressed
+	// the classical behavior is to speed up the block if down button is kept pressed so doing that
 	document.addEventListener("keydown", control);
 
 	//The Tetrominoes
@@ -100,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		iTetromino,
 	];
 
-	//Randomly select Tetromino
+	//Randomly Select Tetromino
 	let random = Math.floor(Math.random() * theTetrominoes.length);
 	let current = theTetrominoes[random][currentRotation];
 

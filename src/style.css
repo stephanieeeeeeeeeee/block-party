@@ -1,5 +1,9 @@
 :root {
-	font-size: 1em;
+	/* default font size in browsers is 16px = 1em, we make
+     things easier for us and make 10px our base size.
+     We have 10/16 = 0.625 = 1rem as it is set on root element.
+     So 1rem is now 10px throughout our stylesheet.*/
+	font-size: 0.625em;
 }
 
 * {
@@ -8,14 +12,12 @@
 
 body {
 	font-family: "Playwrite US Modern", serif;
-	font-optical-sizing: auto;
-	font-weight: 200;
-	font-style: normal;
-	background-image: url("../images/tetris-background.png");
-	background-size: contain;
-	background-repeat: repeat;
+	font-size: 1.6rem;
 	margin: auto;
 	max-width: 60rem;
+	color: #d8edea;
+	background-image: url(/Users/stephstone/Code/block-party/images/tetris-background.png);
+	background-size: 1500px;
 }
 
 header {
@@ -31,8 +33,6 @@ div {
 /* some utility classes */
 .t-ucase {
 	text-transform: uppercase;
-	color: #6b6e00;
-	font-size: 50px;
 }
 
 .t-big {
@@ -55,12 +55,8 @@ div {
 	font-weight: 400;
 }
 
-.score-board {
-	color: blue;
-	font-family: "Share Tech Mono", serif;
-	font-weight: 800;
-	font-size: 25px;
-	font-style: normal;
+.score-display {
+	font-size: 5rem;
 	color: rgb(133, 121, 107, 0.5);
 }
 
@@ -95,29 +91,28 @@ div {
 	height: 8rem;
 }
 
+.block {
+	background-image: url(../images/blue_block.png);
+}
+
+.block2 {
+	background-image: url(../images/purple_block.png);
+}
+
+.block3 {
+	background-image: url(../images/green_block.png);
+}
+
+.block4 {
+	background-image: url(../images/navy_block.png);
+}
+
+.block5 {
+	background-image: url(../images/pink_block.png);
+}
+
 .end {
 	background-color: #d8edea;
-}
-
-.grid {
-	width: 200px;
-	height: 400px;
-	display: flex;
-	flex-wrap: wrap;
-	background-color: teal;
-}
-
-.grid div {
-	height: 20px;
-	width: 20px;
-}
-
-.tetromino {
-	background-color: #6b6e00;
-}
-
-.container {
-	display: flex;
 }
 
 .button {
@@ -174,6 +169,10 @@ div {
 	background-image: linear-gradient(top, #d25068, #f66c7b);
 }
 
+.end {
+	background-image: url(/Users/limit/development/Tetris/images/blue_block.png);
+}
+
 .display {
 	display: flex;
 	flex-direction: column;
@@ -188,6 +187,12 @@ div {
 	border-radius: 5px;
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #fff;
 	color: #85796b;
+}
+
+.score,
+.lines-display {
+	padding-top: 1rem;
+	font-size: 1.2rem;
 }
 
 /*menu*/
@@ -292,7 +297,7 @@ div {
 	width: 100%;
 	height: 100%;
 	overflow: auto;
-	background-color: rgba(24, 39, 51, 0.944);
+	background-color: rgba(24, 39, 51, 0.936);
 }
 
 .menu-content {
@@ -310,14 +315,13 @@ div {
 .rules {
 	font-size: 30px;
 	transition: color 0.4s ease;
-	color: rgb(101, 181, 239);
 }
 
 .key {
-	color: #f9f5cf;
+	color: #6b6e00;
 }
 
 .close {
-	border-radius: 15px;
+	border-radius: 5px;
 	color: rgba(24, 39, 51, 0.85);
 }
