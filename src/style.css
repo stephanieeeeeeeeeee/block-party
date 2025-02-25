@@ -16,7 +16,7 @@ body {
 	margin: auto;
 	max-width: 60rem;
 	color: #d8edea;
-	background-image: url(/Users/stephstone/Code/block-party/images/tetris-background.png);
+	background-image: url(../images/tetris-background.png);
 	background-size: 1500px;
 }
 
