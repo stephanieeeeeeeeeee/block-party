@@ -17,7 +17,8 @@ body {
 	max-width: 60rem;
 	color: #d8edea;
 	background-image: url(../images/tetris-background.png);
-	background-size: 1500px;
+	/* background-size: 1500px; */
+	background-size: auto;
 }
 
 header {
@@ -49,6 +50,7 @@ div {
 
 .fw-300 {
 	font-weight: 300;
+	color: #009eb5;
 }
 
 .fw-400 {
